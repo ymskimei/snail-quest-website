@@ -3,24 +3,65 @@
 
     <head>
         <title>Snail Quest</title>
-        <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            .clickable{
+              filter: drop-shadow(2px 2px 3px rgb(0, 0, 0, 0.15));
+            }
+
+            .clickable:hover{
+                animation: bounce 0.3s linear;
+            }
+    
+            @keyframes bounce{
+                20%, 50%, 80%, to{transform: translateY(0px);}
+                40%{transform: translateY(-10px)}
+                70%{transform: translateY(-5px)}
+            }
+         </style>
     </head>
 
     <body>
+
+        <script>
+            var audio = new Audio("title_demo.mp3");
+
+            function play_demo(){
+                if (audio.paused){
+                    audio.play();
+                } else {
+                    audio.currentTime = 0
+                    audio.pause();
+                }
+            }
+        </script>
+
+        <!--
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+        -->
+    
         <center>
-            <h1>Unavailable for now!</h1>
-
-            <img src="image/construction.png" alt="Snail with construction work hat">
-            <p>This website hasn't been completed yet, <i>please come back another time!</i></p>
-
-            <h3>Weblinks:</h3>
-            <a href="https://www.youtube.com/@snailquest/">YouTube</a>
-            <a href="https://twitter.com/snailquest">Twitter</a>
-            <a href="https://www.instagram.com/snail_quest/">Instagram</a>
+            <br><br><br>
+            <h1><i>Hop along! There's nothing to see here!</i></h1>
+            <img src="images/construction.png" alt="Snail with construction work hat" class="clickable" onclick="play_demo()">
+            <h3>This website is not yet ready to fully launch, we apologize! <i>Please come back another time!</i></h3>
+            <br>
+            <h2>Weblinks:</h2>
+            <a href="https://www.youtube.com/@snailquest/"><img src="images/youtube.png" class="clickable" ></a>
+            <a href="https://twitter.com/snailquest"><img src="images/twitter.png" class="clickable" ></a>
+            <a href="https://www.instagram.com/snail_quest/"><img src="images/instagram.png" class="clickable" ></a>
         </center>
+
     </body>
 
 </html>
